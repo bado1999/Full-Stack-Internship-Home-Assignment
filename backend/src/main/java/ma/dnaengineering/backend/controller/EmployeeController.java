@@ -29,8 +29,8 @@ public class EmployeeController {
     }
 
     @GetMapping("jobsummaries")
-    public ResponseEntity<Response> getJobSummaries(@RequestParam("page") int page, @RequestParam("size") int size) {
-        Response response = employeeService.getJobSummaries(page, size);
+    public ResponseEntity<Response> getJobSummaries() {
+        Response response = employeeService.getJobSummaries();
         // Return the response entity
         return ResponseEntity.ok(response);
     }

@@ -137,7 +137,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         Response response = new Response();
 
         // Retrieve a page of employees from the repository
-        Page<Employee> employees = employeeRepository.findAll(PageRequest.of(page, size));
+        Page<Employee> employees = employeeRepository.findAll(PageRequest.of(page-1, size));
 
         // Map the employee entities to employee DTOs
         List<EmployeeDTO> employeeDTOs = employees.stream()
@@ -159,19 +159,17 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     /**
-     * Retrieves a page of job summaries.
+     * Retrieves the job summaries from the repository and returns them in a response object.
      *
-     * @param page the page number
-     * @param size the number of job summaries per page
-     * @return the response containing the job summaries
+     * @return         	A response object containing the job summaries
      */
     @Override
-    public Response getJobSummaries(int page, int size) {
+    public Response getJobSummaries() {
         // Create a new response object
         Response response = new Response();
 
-        // Retrieve a page of job summaries from the repository
-        Page<JobSummary> jobSummaries = jobSummaryRepository.findAll(PageRequest.of(page, size));
+        // Retrieve all job summaries from the repository
+        List<JobSummary> jobSummaries = jobSummaryRepository.findAll();
 
         // Map the job summary entities to job summary DTOs
         List<JobSummaryDTO> jobSummaryDTOs = jobSummaries.stream()
@@ -181,7 +179,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         // Create a data map to hold the job summary DTOs
         HashMap<String, Object> data = new HashMap<>();
         data.put("jobSummaries", jobSummaryDTOs);
-        data.put("totalPages", jobSummaries.getTotalPages());
 
         // Set the data, status, and message for the response
         response.setData(data);

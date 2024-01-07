@@ -41,9 +41,6 @@ class BackendApplicationTests {
     private WebApplicationContext webApplicationContext;
 
     @MockBean
-    private EmployeeRepository employeeRepository;
-
-    @MockBean
     JobSummaryRepository jobSummaryRepository;
 
     @MockBean
@@ -73,7 +70,7 @@ class BackendApplicationTests {
     @Test
     void testGetEmployees() throws Exception {
 
-        mvc.perform(MockMvcRequestBuilders.get("/employees?page=0&size=10")
+        mvc.perform(MockMvcRequestBuilders.get("/employees?page=1&size=10")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -86,7 +83,7 @@ class BackendApplicationTests {
     @Test
     void testGetJobSummaries() throws Exception {
 
-        mvc.perform(MockMvcRequestBuilders.get("/employees/jobsummaries?page=0&size=10")
+        mvc.perform(MockMvcRequestBuilders.get("/employees/jobsummaries")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
