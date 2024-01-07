@@ -9,5 +9,5 @@ public interface EmployeeService {
 
     Response getEmployees(int page, int size);
 
-    Response getJobSummaries();
+    Response getJobSummaries(int page,int size);
 }

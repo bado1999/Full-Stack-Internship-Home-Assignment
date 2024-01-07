@@ -8,8 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+
+@CrossOrigin
 @RestController
-@RequestMapping("employees")
+@RequestMapping("/employees")
 public class EmployeeController {
 
     EmployeeService employeeService;
@@ -29,8 +31,8 @@ public class EmployeeController {
     }
 
     @GetMapping("jobsummaries")
-    public ResponseEntity<Response> getJobSummaries() {
-        Response response = employeeService.getJobSummaries();
+    public ResponseEntity<Response> getJobSummaries(@RequestParam("page") int page, @RequestParam("size") int size) {
+        Response response = employeeService.getJobSummaries( page, size);
         // Return the response entity
         return ResponseEntity.ok(response);
     }

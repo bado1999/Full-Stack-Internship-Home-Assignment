@@ -83,7 +83,7 @@ class BackendApplicationTests {
     @Test
     void testGetJobSummaries() throws Exception {
 
-        mvc.perform(MockMvcRequestBuilders.get("/employees/jobsummaries")
+        mvc.perform(MockMvcRequestBuilders.get("/employees/jobsummaries?page=1&size=10")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
