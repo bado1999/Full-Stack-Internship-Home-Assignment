@@ -147,6 +147,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         // Create a data map to hold the employee DTOs
         HashMap<String, Object> data = new HashMap<>();
         data.put("employees", employeeDTOs);
+        data.put("totalPages", employees.getTotalPages());
 
         // Set the data, status, and message for the response
         response.setData(data);
@@ -180,6 +181,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         // Create a data map to hold the job summary DTOs
         HashMap<String, Object> data = new HashMap<>();
         data.put("jobSummaries", jobSummaryDTOs);
+        data.put("totalPages", jobSummaries.getTotalPages());
 
         // Set the data, status, and message for the response
         response.setData(data);
