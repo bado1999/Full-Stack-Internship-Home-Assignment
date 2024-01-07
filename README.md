@@ -60,7 +60,7 @@ Respect the following design flow:
 ## Bonus points
 - Implement your own CSV file parser instead of using a library.
 - Use design patterns.
-## Approch
+## Approach
 - When a file is upload it is parsed and the information is stored in an in-memory database.
 - Then the data is fetched and displayed by next.js/react client.
 
