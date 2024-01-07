@@ -15,5 +15,5 @@ public class JobSummaryDTO {
 
     private String title;
 
-    private Float averageSalary;
+    private Long averageSalary;
 }

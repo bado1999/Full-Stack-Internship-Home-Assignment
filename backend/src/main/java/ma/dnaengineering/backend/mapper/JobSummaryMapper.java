@@ -12,7 +12,7 @@ public abstract class JobSummaryMapper {
      * @param  averageSalary  the average salary of the job
      * @return                the JobSummary object with the mapped values
      */
-    public static JobSummary mapToJobSummary(String title, Float averageSalary) {
+    public static JobSummary mapToJobSummary(String title, Long averageSalary) {
         JobSummary jobSummary = new JobSummary();
         jobSummary.setTitle(title);
         jobSummary.setAverageSalary(averageSalary);

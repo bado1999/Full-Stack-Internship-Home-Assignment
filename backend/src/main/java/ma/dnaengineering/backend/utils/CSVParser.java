@@ -31,7 +31,7 @@ public abstract class CSVParser {
             Long id = Long.parseLong(values[0]);
             String name = values[1];
             String job = values[2];
-            Float salary = Float.parseFloat(values[3]);
+            Long salary = Float.parseFloat(values[3]);
 
             EmployeeDTO employeeDTO = EmployeeMapper.mapToEmployeeDTO(id, name, job, salary);
             employees.add(employeeDTO);
