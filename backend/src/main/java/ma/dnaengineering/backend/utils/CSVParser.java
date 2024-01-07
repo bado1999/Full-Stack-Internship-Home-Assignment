@@ -24,8 +24,7 @@ public abstract class CSVParser {
         List<EmployeeDTO> employees = new ArrayList<>();
 
         String cvsString = new String(file.getBytes(), StandardCharsets.UTF_8);
-        String[] lines = Arrays.stream(cvsString.split("\n")).skip(1).toArray(String[]::new);
-
+        String[] lines = Arrays.stream(cvsString.split("\\r?\\n")).skip(1).toArray(String[]::new);
         for (String line : lines) {
             String[] values = line.split(",");
             Long id = Long.parseLong(values[0]);
