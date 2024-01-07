@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("employee")
+@RequestMapping("employees")
 public class EmployeeController {
 
     EmployeeService employeeService;
@@ -28,7 +28,7 @@ public class EmployeeController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("jobsummary")
+    @GetMapping("jobsummaries")
     public ResponseEntity<Response> getJobSummaries(@RequestParam("page") int page, @RequestParam("size") int size) {
         Response response = employeeService.getJobSummaries(page, size);
         // Return the response entity

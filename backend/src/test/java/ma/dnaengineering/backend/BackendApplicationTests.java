@@ -61,7 +61,7 @@ class BackendApplicationTests {
 
         MockMvc mockMvc
                 = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-        mockMvc.perform(multipart("/employee/process").file(file))
+        mockMvc.perform(multipart("/employees/process").file(file))
                 .andExpect(status().isOk());
     }
 
@@ -73,7 +73,7 @@ class BackendApplicationTests {
     @Test
     void testGetEmployees() throws Exception {
 
-        mvc.perform(MockMvcRequestBuilders.get("/employee?page=0&size=10")
+        mvc.perform(MockMvcRequestBuilders.get("/employees?page=0&size=10")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -86,7 +86,7 @@ class BackendApplicationTests {
     @Test
     void testGetJobSummaries() throws Exception {
 
-        mvc.perform(MockMvcRequestBuilders.get("/employee/jobsummary?page=0&size=10")
+        mvc.perform(MockMvcRequestBuilders.get("/employees/jobsummaries?page=0&size=10")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
