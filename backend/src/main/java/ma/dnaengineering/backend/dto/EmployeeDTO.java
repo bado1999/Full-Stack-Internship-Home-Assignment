@@ -15,7 +15,7 @@ public class EmployeeDTO {
 
     private String name;
 
-    private Long salary;
+    private Float salary;
 
     private String jobTitle;
 

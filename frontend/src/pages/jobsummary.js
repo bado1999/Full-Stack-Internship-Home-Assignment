@@ -20,15 +20,6 @@ const JobSummary = () => {
      * Handles errors that occur during the fetch.
      */
     useEffect(() => {
-        fetchJobSummaries();
-    }, [page]);
-
-    /**
-     * Fetches job summaries from the API.
-     * If the fetch is successful, updates the jobSummaries and totalPages state variables.
-     * If the fetch fails, logs the error to the console.
-     */
-    const fetchJobSummaries = () => {
         fetch(`http://localhost:8080/employees/jobsummaries?page=${page}&size=${pageSize}`)
             .then((response) => {
                 if (!response.ok) {
@@ -37,8 +28,9 @@ const JobSummary = () => {
                 return response.json();
             })
             .then(json => {
-                if (json.status === "FAILURE")
-                    throw new Error(json.message)
+                if (json.status !== "SUCCESS"){
+                    throw new Error(json.message);
+                }
                 setJobSummaries(json.data.jobSummaries);
                 setTotalPages(json.data.totalPages);
             })
@@ -46,7 +38,7 @@ const JobSummary = () => {
                 // Handle errors
                 console.error('Error fetching data:', error);
             });
-    };
+    }, [page]);
 
     /**
      * Renders the JobSummary component.

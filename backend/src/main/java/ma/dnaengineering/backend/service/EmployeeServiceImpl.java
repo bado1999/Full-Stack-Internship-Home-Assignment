@@ -112,10 +112,10 @@ public class EmployeeServiceImpl implements EmployeeService {
      */
     private List<JobSummary> mapToJobSummaries(List<EmployeeDTO> employees) {
         // Calculate the average salaries for each job title
-        Map<String, Long> averageSalariesByJobTitle = employees.stream()
+        Map<String, Float> averageSalariesByJobTitle = employees.stream()
                 .collect(Collectors.groupingBy(EmployeeDTO::getJobTitle, Collectors.averagingDouble(EmployeeDTO::getSalary)))
                 .entrySet().stream()
-                .collect(Collectors.toMap(Map.Entry::getKey, entry -> entry.getValue().longValue()));
+                .collect(Collectors.toMap(Map.Entry::getKey, entry -> entry.getValue().floatValue()));
 
         // Map the average salaries to JobSummary objects
         return averageSalariesByJobTitle.entrySet().stream()

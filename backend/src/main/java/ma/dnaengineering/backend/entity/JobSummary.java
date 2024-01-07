@@ -22,6 +22,6 @@ public class JobSummary {
     private String title;
 
     @Column(name = "average_salary", nullable = false)
-    private Long averageSalary;
+    private Float averageSalary;
 
 }

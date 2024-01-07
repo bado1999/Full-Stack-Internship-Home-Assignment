@@ -1,6 +1,3 @@
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
 
 import {useState} from "react";
 import Employee from "./employee";
@@ -41,8 +38,9 @@ const Home = () => {
           return response.json();
         })
         .then(json => {
-          if (json.status === "FAILURE") {
-            throw new Error(json.message)
+            console.log(json)
+          if (json.status !== "SUCCESS") {
+            throw new Error(json.message);
           }
           setFile(null);
           setDataReady(true);

@@ -25,7 +25,7 @@ const Employee = () => {
                 return response.json();
             })
             .then((json) => {
-                if (json.status === 'FAILURE') {
+                if (json.status !== "SUCCESS") {
                     throw new Error(json.message);
                 }
                 setEmployees(json.data.employees);

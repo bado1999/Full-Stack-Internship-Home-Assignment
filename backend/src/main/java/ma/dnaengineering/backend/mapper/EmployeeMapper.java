@@ -15,7 +15,7 @@ public abstract class EmployeeMapper {
      * @param  salary the salary of the employee
      * @return        the EmployeeDTO object with the mapped parameters
      */
-    public static EmployeeDTO mapToEmployeeDTO(Long id, String name, String job, Long salary) {
+    public static EmployeeDTO mapToEmployeeDTO(Long id, String name, String job, Float salary) {
         EmployeeDTO employeeDTO = new EmployeeDTO();
         employeeDTO.setId(id);
         employeeDTO.setName(name);

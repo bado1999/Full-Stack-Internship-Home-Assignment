@@ -22,7 +22,7 @@ public class Employee {
     private String name;
 
     @Column(name = "salary", nullable = false)
-    private Long salary;
+    private Float salary;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "job_summary_id",nullable = false)
