@@ -5,7 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface EmployeeService {
 
-    Response upload(MultipartFile file);
+    Response process(MultipartFile file);
 
     Response getEmployees(int page, int size);
 

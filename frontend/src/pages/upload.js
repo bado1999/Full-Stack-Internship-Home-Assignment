@@ -5,5 +5,5 @@ const UploadButton = () => {
             <h1>Process</h1>
         </div>
     );
-}p
+}
 export default UploadButton

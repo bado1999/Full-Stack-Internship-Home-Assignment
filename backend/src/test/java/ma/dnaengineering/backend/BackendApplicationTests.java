@@ -61,7 +61,7 @@ class BackendApplicationTests {
 
         MockMvc mockMvc
                 = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-        mockMvc.perform(multipart("/employee/upload").file(file))
+        mockMvc.perform(multipart("/employee/process").file(file))
                 .andExpect(status().isOk());
     }
 

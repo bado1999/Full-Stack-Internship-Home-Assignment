@@ -14,9 +14,9 @@ public class EmployeeController {
 
     EmployeeService employeeService;
 
-    @PostMapping(value = "upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "process", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<Response> upload(@RequestParam("file") MultipartFile file) {
-        Response response = employeeService.upload(file);
+        Response response = employeeService.process(file);
         // Return the response entity
         return ResponseEntity.ok(response);
     }

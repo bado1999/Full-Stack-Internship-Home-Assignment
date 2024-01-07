@@ -36,7 +36,7 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @return the response indicating the status of the upload
      */
     @Override
-    public Response upload(MultipartFile file) {
+    public Response process(MultipartFile file) {
         List<EmployeeDTO> employeeDTOs;
         List<JobSummary> jobSummaries;
         List<Employee> employees;
