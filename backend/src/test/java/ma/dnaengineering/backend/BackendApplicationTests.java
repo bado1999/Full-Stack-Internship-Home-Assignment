@@ -2,7 +2,6 @@ package ma.dnaengineering.backend;
 
 import ma.dnaengineering.backend.controller.EmployeeController;
 import ma.dnaengineering.backend.dto.EmployeeDTO;
-import ma.dnaengineering.backend.repository.EmployeeRepository;
 import ma.dnaengineering.backend.repository.JobSummaryRepository;
 import ma.dnaengineering.backend.service.EmployeeService;
 import ma.dnaengineering.backend.utils.CSVParser;
